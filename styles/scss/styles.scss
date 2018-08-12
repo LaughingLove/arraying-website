@@ -1,0 +1,214 @@
+$blue: #3659f7;
+$matte-black: #232323;
+$almost-black: #161616;
+
+html, body {
+    margin: 0;
+    min-height: 100%;
+    width: 100%;
+}
+
+body {
+    padding: 0;
+    font-family: 'Raleway', sans-serif;
+    background: $blue;
+    background-image: radial-gradient(center center, circle farthest-corner, #172566, $blue);
+    background-image: -moz-radial-gradient(center center, circle farthest-corner, #172566, $blue);
+    text-align: center;
+    color: white;
+}
+
+ul {
+    list-style: none;
+}
+a {
+    text-decoration: none;
+    color: white;
+}
+
+#particle-js {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.wrapper {
+
+    width: 100%;
+    height: 100%;
+    // So you can interact with the particles AND the foreground elements
+    // pointer-events: none;
+    // a, h1, p, footer {
+    //     pointer-events: all;
+    // }
+}
+
+// Header
+
+.header {
+    background-image: url(../../img/background-image-programming.jpg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    height: 100vh;
+    padding: 1em;
+
+    #arraying-logo {
+        border-radius: 50%;
+        width: 50%;
+    }
+
+    .center-content {
+        padding: 1em;
+        margin-top: 2em;
+    }
+    .arrow {
+        margin-top: 1em;
+        font-size: 1.5em;
+        a:hover {
+            padding: 0.3em;
+            border-radius: 20%;
+            background: $blue;
+        }
+    }
+    div {
+        animation: fadeAndScale 1s cubic-bezier(.3,-0.59,.64,1.65);
+        transform-origin: center bottom;
+    }
+    @keyframes fadeAndScale {
+        from {
+            opacity: 0;
+            transform: scale3d(.75, .75, 1);
+        }
+        to {
+            opacity: 1;
+            transform: scale3d(1, 1, 1);
+        }
+    }
+}
+
+// Nav
+
+.nav {
+    margin-right: 1em;
+    a:hover {
+        border-bottom: 0.1em solid white;
+    }
+    li {
+        padding: 0.2em;
+    }
+}
+
+// About
+
+.about {
+    padding: 1em;
+    margin: 1em;
+    border-radius: 3%;
+    background: $matte-black;
+}
+
+// Techstack
+
+.techstack {
+    padding: 1em;
+    margin: 1em;
+    border: 0.1em solid $matte-black;
+}
+
+.item {
+    background: $matte-black;
+    padding: 2em;
+    margin: 1em;
+    border-radius: 3%;
+}
+
+.item:hover {
+    position: relative;
+    top: -5px;
+    box-shadow: 5px 10px $almost-black;
+}
+
+// Portfolio
+
+.portfolio-item {
+    background: $matte-black;
+    padding: 1em;
+    margin: 1em;
+    border-radius: 3%;
+    img {
+        border-radius: 50%;
+        width: 50%;
+    }
+}
+
+.portfolio-item:hover {
+    position: relative;
+    top: -5px;
+    box-shadow: 5px 10px $almost-black;
+}
+
+// Contact
+
+.contact {
+    margin: 1em;
+    font-size: 1.5em;
+    ul {
+        margin-right: 1em;
+    }
+    li {
+        display: inline-block;
+        padding: 0.7em;
+    }
+    a:hover {
+        border-bottom: 0.1em solid white;
+    }
+}
+
+// Footer
+
+.footer {
+    a:hover {
+        border-bottom: 0.1em solid white;
+    }
+}
+
+// Media Queries
+
+@media screen and (min-width: 600px) {
+    .top-nav {
+        display: grid;
+        grid-template-columns: 1fr 1fr 25em;
+        grid-template-areas: 
+            "domain . nav";
+        .domain-name {
+            grid-area: domain;
+        }
+        .nav {
+            grid-area: nav;
+            text-align: right;
+            li {
+                display: inline-block;
+                margin-right: 0.5em;
+            }
+        }
+    }
+    .header #arraying-logo {
+        width: 25%;
+    }
+
+    header .center-content {
+        vertical-align: middle;
+    }
+
+    .items {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .portfolio-items {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+}
