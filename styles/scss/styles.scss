@@ -88,6 +88,11 @@ a {
     }
 }
 
+.domain-name a:hover {
+    color: $blue;
+    //border-bottom: 0.1em solid white;
+}
+
 // Nav
 
 .nav {
@@ -210,5 +215,59 @@ a {
     .portfolio-items {
         display: grid;
         grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media screen and (min-width: 900px) {
+    .about {
+        width: 70%;
+        margin: 1em auto;
+    }
+
+    .header #arraying-logo {
+        width: 15em;
+    }
+
+    .portfolio-items {
+        width: 50%;
+        margin: 0 auto;
+        grid-gap: 1em;
+    }
+
+    .portfolio-item {
+        // img {
+        //     width: 8em;
+        // }
+        // width: 50%;
+        margin: 0 auto;
+    }
+
+    .top-nav {
+        grid-template-columns: 1fr 1fr 1fr;
+        .nav {
+            text-align: center;
+        }
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .techstack {
+        width: 70%;
+        margin: 0 auto;
+    }
+
+    .items {
+        width: 80%;
+        margin: 0 auto;
+    }
+
+    .portfolio-item img {
+        width: 10em;
+    }
+}
+
+@media screen and (max-height: 580px) {
+    .header {
+        height: 40em;
     }
 }
